@@ -1,0 +1,25 @@
+{
+  "name": "vue-principle",
+  "version": "1.0.0",
+  "description": "vue 原理解读",
+  "main": "index.js",
+  "scripts": {
+    "reactive": "pnpm --filter '@vue-principle/reactive' dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swdenglian/vue-principle.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "swdenglian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swdenglian/vue-principle/issues"
+  },
+  "homepage": "https://github.com/swdenglian/vue-principle#readme",
+  "dependencies": {
+    "vite": "^3.0.2"
+  }
+}
