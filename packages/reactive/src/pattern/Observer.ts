@@ -5,6 +5,10 @@ export class Observer<T> {
     this.setState(val);
   }
 
+  public getState() {
+    return this.val;
+  }
+
   public setState(value: T) {
     this.val = value;
     this.dep.notify(this.val);

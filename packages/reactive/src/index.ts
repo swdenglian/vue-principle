@@ -1,28 +1,19 @@
 /**
  * @file 普通响应式数据渲染 hello world
  */
-import { Dep } from "./pattern/Dep";
-import { Observer } from "./pattern/Observer";
-import { Watcher } from "./pattern/Watcher";
-import { Render } from "./render";
+import { View } from "./View";
 
-const renderer = new Render(
-  document.getElementById("app")!,
-  (value: string) => `<div>${value}</div>`
-);
-
-const watcher = new Watcher((value: string) => {
-  renderer.update(value);
+const view = new View({
+  data: {
+    msg: "yooo",
+  },
+  render: (data) => `<div>${data.msg}</div>`,
+  mount: document.getElementById("app")!,
 });
-
-const dep = new Dep<string>();
-dep.addSub(watcher);
-
-const observer = new Observer<string>("nothing", dep);
 
 setTimeout(() => {
   /**
    * 模拟延迟修改数据
    */
-  observer.setState("hello world");
+  view.$data.msg = "hello world, yooo";
 }, 3000);
